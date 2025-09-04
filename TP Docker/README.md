@@ -1,9 +1,9 @@
 # Fichier de suivi du TP sur Docker 
 
-Le travail à été réalisé sur Codespaces.
+Le travail a été réalisé sur Codespaces.
 
 ## Exercice 1
-Pas d'installation nécessaire grace à Codespaces.
+Pas d'installation nécessaire grâce à Codespaces.
 
 ## Exercice 3
 
@@ -56,26 +56,37 @@ docker stop mon_nginx
 
 ![alt text](assets/image-3.png)
 
-## Exercie 5 : application Python Flask
+## Exercice 5 : application Python Flask
 
-Création d'un fichier app.py contenant une application Flask minimale.
+1. Création d'un fichier app.py contenant une application Flask minimale.
 - Flask = micro-framework web en Python
 - @app.route("/") = définit la route / = la page d’accueil
 - host="0.0.0.0" = l’app hors du container (à priori)
 - port=5000 = le port 5000 ( convention Flask)
 
-Écriture d'un Dockerfile pour construire l’image de l’application.
-Construction de l’image et lancement du conteneur.
+2. Écriture d'un Dockerfile pour construire l’image de l’application.
+3. Construction de l’image et lancement du conteneur.
 = docker build -t flask-julie .
 
-Tests de l’application.
+4. Tests de l’application.
 
-![alt text](asset/image-4.png)
+![alt text](assets/image-4.png)
 
 ## Exercie 6 : Utilisation de docker compose
 
-Compléter le fichier app.py afin de lui ajouter une connexion a un bdd mongoDB
+1. Compléter le fichier app.py afin de lui ajouter une connexion à une base de données MongoDB
++ requirements.txt = fichier permettra à Docker d’installer automatiquement les dépendances Python.
 
-Écrire un fichier docker compose avec les deux conteneurs
+2. Écrire un fichier docker compose avec les deux conteneurs
 
-Lancer le docker compose puis à minima vérifier que la connexion c’est bien effectuée sur la base de données
+Quelques explications : 
+- web = app Flask, construite à partir de Dockerfile
+- db = conteneur MongoDB officiel
+- depends_on = démarre db avant web
+- la variable MONGO_URL est passée à l’app = l’utilise pour se connecter
+
+3. Lancer le docker compose puis à minima vérifier que la connexion c’est bien effectuée sur la base de données
+
+Avec : docker-compose up --build
+
+![alt text](assets/image-5.png)
