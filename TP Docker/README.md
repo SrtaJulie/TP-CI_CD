@@ -71,3 +71,11 @@ Construction de l’image et lancement du conteneur.
 Tests de l’application.
 
 ![alt text](asset/image-4.png)
+
+## Exercie 6 : Utilisation de docker compose
+
+Compléter le fichier app.py afin de lui ajouter une connexion a un bdd mongoDB
+
+Écrire un fichier docker compose avec les deux conteneurs
+
+Lancer le docker compose puis à minima vérifier que la connexion c’est bien effectuée sur la base de données
