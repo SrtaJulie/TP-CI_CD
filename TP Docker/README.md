@@ -1,11 +1,11 @@
-## Fichier de suivi du TP sur Docker 
+# Fichier de suivi du TP sur Docker 
 
 Le travail à été réalisé sur Codespaces.
 
-# Exercice 1
+## Exercice 1
 Pas d'installation nécessaire grace à Codespaces.
 
-# Exercice 3
+## Exercice 3
 
 Tâches faites :
 1. Vérifier la version de Docker :
@@ -36,7 +36,7 @@ docker rm <ID_conteneur>
 8. Supprimer une image :
 docker rmi <ID_image>
 
-# Exercice 4 : serveur web
+## Exercice 4 : serveur web
 
 1. Télécharger l'image officielle Nginx :
 docker pull nginx
@@ -55,3 +55,10 @@ docker ps
 docker stop mon_nginx
 
 ![alt text](assets/image-3.png)
+
+## Exercie 5 : application Python Flask
+
+Création d'un fichier app.py contenant une application Flask minimale.
+Écriture d'un Dockerfile pour construire l’image de l’application.
+Construction de l’image et lancement du conteneur.
+Tests de l’application.
