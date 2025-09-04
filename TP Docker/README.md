@@ -59,6 +59,15 @@ docker stop mon_nginx
 ## Exercie 5 : application Python Flask
 
 Création d'un fichier app.py contenant une application Flask minimale.
+- Flask = micro-framework web en Python
+- @app.route("/") = définit la route / = la page d’accueil
+- host="0.0.0.0" = l’app hors du container (à priori)
+- port=5000 = le port 5000 ( convention Flask)
+
 Écriture d'un Dockerfile pour construire l’image de l’application.
 Construction de l’image et lancement du conteneur.
+= docker build -t flask-julie .
+
 Tests de l’application.
+
+![alt text](asset/image-4.png)
