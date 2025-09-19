@@ -29,8 +29,10 @@ Taille : 146MB (avec "docker image ls node-app")
 
 Temps de build : 4.3s (avec "docker build -t node-app:baseline .")
 Taille : 148MB (avec "docker image ls node-app")
+=> plus lourd car on a ajouté un fichier
 
 ## ETAPE 4 : Changement dockerfile pour "mode production" + clean npm
+=> copier les fichier intelligement
 
 Changements :
 - Mode prod : ENV NODE_ENV=production
@@ -40,3 +42,12 @@ Changements :
 
 Temps de build : 3.8s (avec "docker build -t node-app:baseline .")
 Taille : 147MB (avec "docker image ls node-app")
+
+## ETAPE 5 : Utilisation du multistage
+
+Rendu plus propre ou pro.
+
+Temps de build : 1.7s (avec "docker build -t node-app:baseline .")
+Taille : 144MB (avec "docker image ls node-app")
+
+Suppression de USER root pour la sécurité.
