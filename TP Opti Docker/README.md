@@ -24,3 +24,8 @@ Passage à node:20-alpine et suppression du "COPY node_modules ./node_modules" e
 
 Temps de build : 6.2s (avec "docker build -t node-app:baseline .")
 Taille : 146MB (avec "docker image ls node-app")
+
+## ETAPE 3 : jout d'un .dockerignore
+
+Temps de build : 4.3s (avec "docker build -t node-app:baseline .")
+Taille : 148MB (avec "docker image ls node-app")
