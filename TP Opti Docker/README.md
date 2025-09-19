@@ -25,7 +25,18 @@ Passage à node:20-alpine et suppression du "COPY node_modules ./node_modules" e
 Temps de build : 6.2s (avec "docker build -t node-app:baseline .")
 Taille : 146MB (avec "docker image ls node-app")
 
-## ETAPE 3 : jout d'un .dockerignore
+## ETAPE 3 : ajout d'un .dockerignore
 
 Temps de build : 4.3s (avec "docker build -t node-app:baseline .")
 Taille : 148MB (avec "docker image ls node-app")
+
+## ETAPE 4 : Changement dockerfile pour "mode production" + clean npm
+
+Changements :
+- Mode prod : ENV NODE_ENV=production
+- installation plus propre et plus rapide des packages avec npm ci, sans "devDependencies"
+- Passage en EXPOSE 3000 seulement
+- COPY package*.json ./ => Copie uniquement les fichiers nécessaires pour installer les dépendances
+
+Temps de build : 3.8s (avec "docker build -t node-app:baseline .")
+Taille : 147MB (avec "docker image ls node-app")
