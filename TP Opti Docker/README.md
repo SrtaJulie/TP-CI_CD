@@ -2,7 +2,7 @@
 
 Le travail a été réalisé sur Codespaces.
 
-## Analyse initiale du fichier
+## ETAPE 1 : Analyse initiale du fichier
 
 Problèmes                                                            
 - FROM node:latest => image lourde
@@ -17,3 +17,10 @@ Problèmes
 
 Temps de build : 46.0s (avec "docker build -t node-app:baseline .")
 Taille : 1.2GB (avec "docker image ls node-app")
+
+## ETAPE 2 : Supprimer les mauvaises pratiques et image plus légère
+
+Passage à node:20-alpine et suppression du "COPY node_modules ./node_modules" et "RUN apt-get update && apt-get install -y build-essential ..."
+
+Temps de build : 6.2s (avec "docker build -t node-app:baseline .")
+Taille : 146MB (avec "docker image ls node-app")
